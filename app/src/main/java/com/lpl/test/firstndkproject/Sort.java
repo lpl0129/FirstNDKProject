@@ -1,5 +1,7 @@
 package com.lpl.test.firstndkproject;
 
+import java.util.Arrays;
+
 public class Sort {
 
 
@@ -17,6 +19,8 @@ public class Sort {
                 }
             }
 
+
+            System.out.println("第"+i+"轮排序的结果"+Arrays.toString(arr));
         }
 
         return arr;
@@ -88,4 +92,7 @@ public class Sort {
 
         return arr;
     }
+
+
+
 }
