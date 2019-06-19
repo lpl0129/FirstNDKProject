@@ -26,11 +26,15 @@ public class MainActivity extends AppCompatActivity {
         TextView tv2 = (TextView) findViewById(R.id.sample_text_2);
         tv2.setText(stringFormJMIMtest());
 
-        int[] arr = new int[]{2, 5, 3, 6, 1, 9, 0};
+        int[] arr = new int[]{170, 168, 167, 169, 166};
 
-           System.out.println("冒泡排序====" + Arrays.toString(Sort.bobbleSort(arr)));
+        //   Sort.bobbleSort(arr);
+        // System.out.println("冒泡排序====" + Arrays.toString(Sort.bobbleSort(arr)));
         //  System.out.println("快速排序====" + Arrays.toString(Sort.quick(arr, 0, arr.length-1)));
-       // System.out.println("插入排序====" + Arrays.toString(Sort.insertionSort(arr)));
+        // System.out.println("插入排序====" + Arrays.toString(Sort.insertionSort(arr)));
+
+        HuffmanCode huffmanCode = new HuffmanCode();
+        huffmanCode.string2Sort(huffmanCode.str);
     }
 
 
