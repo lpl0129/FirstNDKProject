@@ -6,7 +6,7 @@ public class Sort {
 
 
     //冒泡排序
-    public static void  bobbleSort(int arr[]) {
+    public static void bobbleSort(int arr[]) {
 
         for (int i = 0; i < arr.length - 1; i++) {
 
@@ -17,14 +17,14 @@ public class Sort {
                     arr[j] = arr[j + 1];
                     arr[j + 1] = temp;
                 }
-                System.out.println("第" + (i+1) + "轮排序第" +(j+1) + "次" + Arrays.toString(arr));
+                System.out.println("第" + (i + 1) + "轮排序第" + (j + 1) + "次" + Arrays.toString(arr));
             }
 
 
-            System.out.println("第" + (i+1) + "轮排序的结果" + Arrays.toString(arr));
+            System.out.println("第" + (i + 1) + "轮排序的结果" + Arrays.toString(arr));
         }
 
-      //  return arr;
+        //  return arr;
     }
 
     //快速排序
@@ -46,13 +46,13 @@ public class Sort {
 
                 low++;
             }
-
+            System.out.println("快速排序前===" + Arrays.toString(arr));
             arr[hig] = arr[low];
-
+            System.out.println("快速排序hou===" + Arrays.toString(arr));
         }
 
         arr[low] = temp;
-
+        System.out.println("快速排序后===" + Arrays.toString(arr));
         return low;
 
     }
