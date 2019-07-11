@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         // System.out.println("插入排序====" + Arrays.toString(Sort.insertionSort(arr)));
 
         HuffmanCode huffmanCode = new HuffmanCode();
-     //   huffmanCode.string2Sort(huffmanCode.str);
-        Sort.quick(arr,0,arr.length-1);
+        //   huffmanCode.string2Sort(huffmanCode.str);
+        System.out.println(Sort.binarySearch(Sort.quick(arr, 0, arr.length - 1), 168, 0, 4));
     }
 
 

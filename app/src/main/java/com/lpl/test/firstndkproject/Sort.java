@@ -94,5 +94,37 @@ public class Sort {
         return arr;
     }
 
+    /**
+     * @param arr  要求是有序的数组
+     * @param key  要查找的值
+     * @param low  开始位置
+     * @param high 结束为止
+     * @return
+     */
+
+    public static int binarySearch(int[] arr, int key, int low, int high) {
+
+        //如果需要查找的值小于最小值、大于最大值、或者开始为止大于结束位置时，说明数组中不存在查找的值，返回-1
+        if (arr[low] > key || arr[high] < key || low > high) {
+            return -1;
+
+        }
+        //取中间位置
+        int mind = (low + high) / 2;
+        //如果中间位置的上值大于key，则在左子集中找
+        if (arr[mind] > key) {
+
+            return binarySearch(arr, key, low, mind - 1);
+        } else if (arr[mind] < key) {
+            //中间值小于key 在右子集中找
+            return binarySearch(arr, key, mind + 1, high);
+        } else {
+            //否则说明当前值等于key
+            return mind;
+        }
+
+
+    }
+
 
 }
