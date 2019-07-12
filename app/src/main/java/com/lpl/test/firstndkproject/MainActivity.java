@@ -35,7 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
         HuffmanCode huffmanCode = new HuffmanCode();
         //   huffmanCode.string2Sort(huffmanCode.str);
-        System.out.println(Sort.binarySearch(Sort.quick(arr, 0, arr.length - 1), 168, 0, 4));
+     //   System.out.println(Sort.binarySearch(Sort.quick(arr, 0, arr.length - 1), 168, 0, 4));
+
+//        Huffman huffman = new Huffman();
+//        huffman.sortHuffmanCode(huffman.str);
+
+        System.out.println(Arrays.toString(Sort.quick(arr,0,arr.length-1)));
     }
 
 

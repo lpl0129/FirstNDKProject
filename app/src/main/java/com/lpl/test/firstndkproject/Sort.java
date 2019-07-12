@@ -61,10 +61,10 @@ public class Sort {
     public static int[] quick(int array[], int start, int end) {
         int par = quickSort(array, start, end);
         if (par > start + 1) {
-            quick(array, 0, par);
+            quick(array, start, par);
         }
         if (par < end - 1) {
-            quick(array, par + 1, array.length - 1);
+            quick(array, par + 1, end);
         }
 
         return array;
