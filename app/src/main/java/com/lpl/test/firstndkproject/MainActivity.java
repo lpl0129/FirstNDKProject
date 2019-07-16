@@ -46,11 +46,15 @@ public class MainActivity extends AppCompatActivity {
         //测试两个数的和==target 算法
        /* int[] ind = TestUtil.twoSum(new int[]{3, 2, 4}, 6);
         System.out.println(Arrays.toString(ind));*/
-       //测试三个数的和等0算法
-      //  int[] ind = TestUtil.threeSum(new int[]{3, 2, 4});
-      //  System.out.println(TestUtil.threeSum(new int[]{-1, 0, 1, 2, -1, -4}).toString());
+        //测试三个数的和等0算法
+        //  int[] ind = TestUtil.threeSum(new int[]{3, 2, 4});
+        //  System.out.println(TestUtil.threeSum(new int[]{-1, 0, 1, 2, -1, -4}).toString());
 
-        TestUtil.letterCombinations("234");
+        //TestUtil.letterCombinations("234");
+
+        Huffman hf = new Huffman();
+        byte[] fub = hf.HuffmanZip(hf.str);
+        System.out.println(fub.length+"   ----------------");
 
     }
 

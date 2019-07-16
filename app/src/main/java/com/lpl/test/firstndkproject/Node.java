@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 public class Node implements Comparable<Node> {
     //权
-    public int whigth;
+    public int weight;
     //数据
     public Byte data;
     public Node left;
@@ -12,12 +12,20 @@ public class Node implements Comparable<Node> {
 
     public Node(Byte data, int whigth) {
         this.data = data;
-        this.whigth = whigth;
+        this.weight = whigth;
 
     }
 
     @Override
     public int compareTo(@NonNull Node node) {
-        return node.whigth - this.whigth;
+        return this.weight-node.weight;
+    }
+
+    @Override
+    public String toString() {
+        return "Node{" +
+                "weight=" + weight +
+                ", data=" + data +
+                '}';
     }
 }
