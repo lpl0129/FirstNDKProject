@@ -7,6 +7,7 @@ import android.widget.TextView;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,9 +53,15 @@ public class MainActivity extends AppCompatActivity {
 
         //TestUtil.letterCombinations("234");
 
-        Huffman hf = new Huffman();
+      /*
+      //Huffman编码测试
+      Huffman hf = new Huffman();
         byte[] fub = hf.HuffmanZip(hf.str);
-        System.out.println(fub.length+"   ----------------");
+        System.out.println(fub.length+"   ----------------");*/
+
+        TestUtil2 tu2 = new TestUtil2();
+        List<String> ls = tu2.letterCombinations("");
+        System.out.println(ls.toString() + "   ----------------");
 
     }
 
