@@ -53,15 +53,16 @@ public class MainActivity extends AppCompatActivity {
 
         //TestUtil.letterCombinations("234");
 
-      /*
       //Huffman编码测试
       Huffman hf = new Huffman();
         byte[] fub = hf.HuffmanZip(hf.str);
-        System.out.println(fub.length+"   ----------------");*/
+        System.out.println(fub.length+"   ------压缩后的长度----------");
 
-        TestUtil2 tu2 = new TestUtil2();
+        System.out.println(new String(hf.decode(hf.huffmanCodeMap,fub))+"   -------解码后的长度---------");
+
+     /*   TestUtil2 tu2 = new TestUtil2();
         List<String> ls = tu2.letterCombinations("");
-        System.out.println(ls.toString() + "   ----------------");
+        System.out.println(ls.toString() + "   ----------------");*/
 
     }
 
