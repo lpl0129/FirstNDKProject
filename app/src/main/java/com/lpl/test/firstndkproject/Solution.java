@@ -1,5 +1,7 @@
 package com.lpl.test.firstndkproject;
 
+import android.util.Log;
+
 public class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if (head == null) {
@@ -45,7 +47,7 @@ public class Solution {
         //分析，只存在三种正确的方式，中心对称字符是一对括号，一种相邻两个字符是一对括号
         //{[()]} 、{}[]()、{[]([])}
         boolean res = false;
-        if (s.length() % 2 > 0) {
+        if (s==null||s.length() % 2 > 0) {
             //字符串长度一点是2的整数倍
             return res;
         }
@@ -58,9 +60,6 @@ public class Solution {
         int left = axle - 1;
 
 
-       /* while (comparison(chars[left - stepSize], chars[axle + stepSize]) && left - stepSize >= 0) {
-
-        }*/
         res = true;
         while (res && left - stepSize >= 0) {
             //默认结果设置为true，循环遍历 以中心对称的两个字符，直到left=0;
@@ -71,7 +70,6 @@ public class Solution {
             //如果为true ，则不用在遍历其他情况，因为其他情况一定为false
             return res;
         }
-
 
         left = 0;
         stepSize = 0;
@@ -87,23 +85,33 @@ public class Solution {
             //如果为true ，则不用在遍历其他情况，因为其他情况一定为false
             return res;
         }
+
         //不规则情况 {[]}()、{()[]}
+        //"[({(())}[()])]"
         left = 0;
         stepSize = 0;
         axle = left + 1;//1 = 2^stepSize
         while (axle < s.length()) {
             //"(([])){}"
-            //从头开始找 每个右括号一定出现在 做口号索引加上 2^stepSize 次方位置上
-            if (comparison(chars[left], chars[axle]) && axle - left > 2) {
-                res = isValid(s.substring(left++, axle)) && isValid(s.substring(axle + 1));
-            } else if (axle - left < 2) {
-                left++;
-                axle = left + 1;
-                stepSize = 0;
+            //从头开始找 对应的右括号一定出现在 奇数位
+            if (comparison(chars[left], chars[axle]) && (axle - left - 1) % 2 == 0) {
+                if (axle == s.length() - 1) {
+                    //已经是最后一位
+                    return res = isValid(s.substring(++left, axle));
+                } else {
+                    res = isValid(s.substring(left+1, axle)) && isValid(s.substring(axle + 1));
+                    if (res) {
+                        return res;
+                    } else {
+                        axle += 2;
+                    }
+                }
             } else if (axle < s.length()) {
-                stepSize++;
-                axle += stepSize ^ stepSize;
+                axle += 2;
+            } else {
+                return false;
             }
+
         }
 
 
@@ -126,6 +134,17 @@ public class Solution {
 
         return res;
     }
+
+
+
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+
+
+
+
+    }
+
+
 
 
     public class ListNode {

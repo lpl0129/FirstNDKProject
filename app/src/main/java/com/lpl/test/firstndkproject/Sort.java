@@ -32,7 +32,7 @@ public class Sort {
 
         int temp = arr[low];
 
-        while (low < hig) {
+            while (low < hig) {
 
             while (low < hig && arr[hig] > temp) {
 
