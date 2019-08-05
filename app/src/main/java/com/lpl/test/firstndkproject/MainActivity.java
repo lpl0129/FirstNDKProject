@@ -64,10 +64,25 @@ public class MainActivity extends AppCompatActivity {
         List<String> ls = tu2.letterCombinations("");
         System.out.println(ls.toString() + "   ----------------");*/
 //"{}{{}}"
-        Solution solution = new Solution();
+       /* Solution solution = new Solution();
         System.out.println(solution.isValid("{}{{}}") + "    对比结果");
-        System.out.println(solution.isValid("[({(())}[()])]") + "    对比结果");
+        System.out.println(solution.isValid("[({(())}[()])]") + "    对比结果");*/
 
+       //面试前测试下 冒泡排序
+
+        int[] marr= new int[] {4,8,6,1,3,2,5};
+        int[] res=MianshiTest.bubbleSort3(marr);
+        System.out.println(Arrays.toString(res)+"   冒泡排序");
+
+        int[] marr1= new int[] {4,8,6,1,3,2,5};
+        int[] res1=MianshiTest.quick3(marr1,0,marr1.length-1);
+        System.out.println(Arrays.toString(res1)+"   快速排序");
+
+        int[] marr2= new int[] {4,8,6,1,3,2,5};
+        int[] res2=MianshiTest.inSort3(marr2);
+        System.out.println(Arrays.toString(res2)+"   插入排序");
+
+        System.out.println( MianshiTest._2f(res,9,0,res.length-1)+"  二分查找");
     }
 
 
